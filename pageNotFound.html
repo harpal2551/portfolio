@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #0a192f;
+            --secondary-color: #112240;
+            --accent-color: #64ffda;
+            --text-color: #ccd6f6;
+            --text-secondary: #8892b0;
+        }
+
+        body {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            font-family: 'Arial', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .error-container {
+            text-align: center;
+            max-width: 600px;
+            padding: 40px 20px;
+            background: var(--secondary-color);
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(100, 255, 218, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .error-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(100, 255, 218, 0.1),
+                transparent
+            );
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            to {
+                left: 100%;
+            }
+        }
+
+        .error-code {
+            font-size: 8rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            text-shadow: 2px 2px 10px rgba(100, 255, 218, 0.3);
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .error-code::after {
+            content: '404';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(100, 255, 218, 0.1);
+            font-size: 12rem;
+            z-index: -1;
+        }
+
+        .error-message {
+            font-size: 1.5rem;
+            color: var(--text-color);
+            margin-bottom: 15px;
+        }
+
+        .error-description {
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: 2px solid var(--accent-color);
+            border-radius: 8px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: var(--accent-color);
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+
+        .btn:hover {
+            color: var(--primary-color);
+        }
+
+        .btn:hover::before {
+            width: 100%;
+        }
+
+        .social-icon {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .social-links {
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 6rem;
+            }
+
+            .error-code::after {
+                font-size: 9rem;
+            }
+
+            .error-message {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .error-code {
+                font-size: 4rem;
+            }
+
+            .error-code::after {
+                font-size: 6rem;
+            }
+
+            .error-message {
+                font-size: 1rem;
+            }
+
+            .buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-code">404</div>
+        <h1 class="error-message">Page Not Found</h1>
+        <p class="error-description">Sorry, this social media profile is currently under construction. Please check back later or visit my other social profiles.</p>
+        <div class="buttons">
+            <a href="index.html" class="btn">Go Back Home</a>
+            <a href="#contact" class="btn">Contact Me</a>
+        </div>
+        <div class="social-links">
+            <a href="https://linkedin.com/your-profile" class="social-icon" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://wa.me/917696158219" class="social-icon" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
